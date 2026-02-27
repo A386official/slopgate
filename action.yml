@@ -1,0 +1,27 @@
+name: 'SlopGate'
+description: 'AI slop PR firewall — detects and blocks low-quality AI-generated pull requests'
+author: 'A386official'
+
+branding:
+  icon: 'shield'
+  color: 'red'
+
+inputs:
+  github-token:
+    description: 'GitHub token for API access. Requires `pull-requests: write` and `issues: write` permissions.'
+    required: true
+    default: ${{ github.token }}
+
+outputs:
+  score:
+    description: 'Final SlopGate score (0-100)'
+  verdict:
+    description: 'Verdict: pass, warn, flag, or block'
+  allowlisted:
+    description: 'Whether the PR author was allowlisted'
+  summary:
+    description: 'Human-readable summary of findings'
+
+runs:
+  using: 'node20'
+  main: 'dist/index.js'

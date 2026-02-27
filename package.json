@@ -1,0 +1,47 @@
+{
+  "name": "slopgate",
+  "version": "1.0.0",
+  "description": "AI slop PR firewall for open source maintainers. Detects and blocks low-quality AI-generated pull requests.",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "lint": "tsc --noEmit"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/A386official/slopgate.git"
+  },
+  "keywords": [
+    "github-action",
+    "ai",
+    "slop",
+    "pull-request",
+    "code-review",
+    "open-source",
+    "maintainer",
+    "security",
+    "bot-detection",
+    "quality"
+  ],
+  "author": "A386official",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/A386official/slopgate/issues"
+  },
+  "homepage": "https://github.com/A386official/slopgate#readme",
+  "dependencies": {
+    "@actions/core": "^1.10.1",
+    "@actions/github": "^6.0.0",
+    "@octokit/rest": "^20.0.2",
+    "js-yaml": "^4.1.0",
+    "zod": "^3.22.4"
+  },
+  "devDependencies": {
+    "@types/js-yaml": "^4.0.9",
+    "@types/node": "^20.11.5",
+    "typescript": "^5.3.3",
+    "vitest": "^1.2.2"
+  }
+}

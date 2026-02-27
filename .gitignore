@@ -1,0 +1,14 @@
+node_modules/
+dist/
+*.js
+*.d.ts
+*.js.map
+*.d.ts.map
+!vitest.config.ts
+!jest.config.ts
+.env
+.env.local
+coverage/
+.vscode/
+.idea/
+*.log

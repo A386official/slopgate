@@ -1,0 +1,35 @@
+# SlopGate Configuration
+# Place this file in your repository root as .slopgate.yml
+
+# Score thresholds for each response tier
+thresholds:
+  warn: 30    # 30-60: add review label + comment
+  flag: 60    # 60-80: add flagged label + request changes
+  block: 80   # 80+: auto-close (if auto_close enabled)
+
+# Enable auto-close for PRs scoring above the block threshold
+# WARNING: Use with caution. Defaults to false.
+auto_close: false
+
+# Check weights (0-100, set to 0 to disable a check)
+weights:
+  velocity: 80
+  abandonment: 60
+  shotgun: 90
+  new_account: 20
+  placeholder: 70
+  hallucinated_import: 90
+  docstring_inflation: 40
+  copy_paste: 60
+  generic_description: 50
+  oversized_diff: 60
+  unrelated_changes: 40
+  formatting_only: 30
+
+# Allowlist — PRs from these users/bots skip all checks
+allowlist:
+  users: []
+  bots:
+    - dependabot[bot]
+    - renovate[bot]
+    - github-actions[bot]
